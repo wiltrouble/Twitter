@@ -1,7 +1,12 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, Image } from "react-native";
+import React from "react";
+import { TweetType } from "../types";
 
-const Tweet = ({tweet}) => {
+type TweetProps = {
+  tweet: TweetType;
+}
+
+const Tweet = ({ tweet }: TweetProps) => {
   return (
     <View style={styles.container}>
       <Image source={{ uri: tweet.user.image }} style={styles.avatar} />
@@ -11,15 +16,15 @@ const Tweet = ({tweet}) => {
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
+    flexDirection: "row",
     padding: 10,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderColor: 'lightgray',
-    backgroundColor: 'white',
+    borderColor: "lightgray",
+    backgroundColor: "white",
   },
   avatar: {
     width: 50,
@@ -31,12 +36,12 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   name: {
-    fontWeight: '600',
+    fontWeight: "600",
   },
   content: {
     lineHeight: 20,
     marginTop: 5,
-  }
+  },
 });
 
 export default Tweet;
